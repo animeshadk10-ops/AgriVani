@@ -140,4 +140,9 @@
     .q-text {
         font-size: 1.1rem;
     }
+
+    .faq-title {
+        font-size: 1.8rem;
+        line-height: 1.1;
+    }
 }

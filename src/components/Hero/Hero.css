@@ -11,7 +11,8 @@
     height: 100vh;
     width: 100%;
     overflow: hidden;
-    background-color: #020617; /* Slate 950 */
+    background-color: #020617;
+    /* Slate 950 */
     color: white;
     perspective: 1000px;
 }
@@ -39,7 +40,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: 
+    background-image:
         linear-gradient(rgba(132, 204, 22, 0.05) 1px, transparent 1px),
         linear-gradient(90deg, rgba(132, 204, 22, 0.05) 1px, transparent 1px);
     background-size: 50px 50px;
@@ -63,7 +64,8 @@
     position: absolute;
     width: 4px;
     height: 4px;
-    background: #84cc16; /* Lime 500 */
+    background: #84cc16;
+    /* Lime 500 */
     border-radius: 50%;
     box-shadow: 0 0 10px #84cc16;
 }
@@ -82,7 +84,10 @@
 /* Protocol 5: World-Class Polish */
 .noise-texture {
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
     pointer-events: none;
     z-index: 4;
@@ -90,8 +95,11 @@
 
 .chromatic-aberration {
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    box-shadow: inset 0 0 100px rgba(0,0,0,0.5);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
     pointer-events: none;
     z-index: 5;
     mix-blend-mode: overlay;
@@ -122,8 +130,13 @@
     align-items: center;
 }
 
-.left-cluster { left: 10%; }
-.right-cluster { right: 10%; }
+.left-cluster {
+    left: 10%;
+}
+
+.right-cluster {
+    right: 10%;
+}
 
 .cluster-core {
     position: relative;
@@ -138,16 +151,19 @@
 
 .cluster-ripple {
     position: absolute;
-    top: 50%; left: 50%;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
-    width: 100%; height: 100%;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
     border: 1px solid rgba(132, 204, 22, 0.5);
     animation: ripple 2s infinite;
 }
 
 .cluster-ripple.warning {
-    border-color: rgba(239, 68, 68, 0.5); /* Red for blocked threats */
+    border-color: rgba(239, 68, 68, 0.5);
+    /* Red for blocked threats */
 }
 
 .orbit-ring {
@@ -161,8 +177,10 @@
 
 .satellite {
     position: absolute;
-    top: 0; left: 50%;
-    transform-origin: 0 70px; /* Radius of orbit */
+    top: 0;
+    left: 50%;
+    transform-origin: 0 70px;
+    /* Radius of orbit */
 }
 
 .sat-icon-wrapper {
@@ -181,7 +199,10 @@
     font-family: 'Inter', sans-serif;
 }
 
-.text-right { text-align: right; right: 0; }
+.text-right {
+    text-align: right;
+    right: 0;
+}
 
 .cluster-label {
     display: block;
@@ -241,7 +262,10 @@
 
 .stream-border {
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     border-radius: 99px;
     border: 1px solid rgba(132, 204, 22, 0.3);
     box-shadow: 0 0 15px rgba(132, 204, 22, 0.1);
@@ -292,22 +316,50 @@
 
 /* Animations */
 @keyframes ripple {
-    0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
-    100% { transform: translate(-50%, -50%) scale(2); opacity: 0; }
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(2);
+        opacity: 0;
+    }
 }
 
 @keyframes pulse {
-    0% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.1); opacity: 0.7; }
-    100% { transform: scale(1); opacity: 1; }
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 /* Responsive */
 @media (max-width: 1024px) {
     .orbital-cluster {
-        display: none; /* Hide complex clusters on smaller screens */
+        display: none;
+        /* Hide complex clusters on smaller screens */
     }
+
     .holographic-title {
         font-size: 14vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .holographic-title {
+        font-size: 2.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }
