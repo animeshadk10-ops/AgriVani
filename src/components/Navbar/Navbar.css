@@ -1,0 +1,278 @@
+/* ===================================
+   AGRIVANI: CHAMELEON COMMAND DECK NAVBAR
+   =================================== */
+
+/* --- HUD CONTAINER --- */
+.navbar-hud {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    z-index: 1000;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Default State A: Transparent Hero */
+    background: transparent;
+    border-bottom: 1px solid transparent;
+}
+
+/* --- PROTOCOL 1: SMART MATERIAL (SCROLLED) --- */
+.navbar-hud.scrolled {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    height: 70px;
+    /* Slightly compacted */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* --- CHAMELEON THEMES --- */
+/* Green Theme (Vision) */
+.navbar-hud.theme-green {
+    border-bottom-color: rgba(132, 204, 22, 0.3);
+    box-shadow: 0 10px 40px -10px rgba(132, 204, 22, 0.1);
+}
+
+/* Blue Theme (Workflow) */
+.navbar-hud.theme-blue {
+    border-bottom-color: rgba(6, 182, 212, 0.3);
+    box-shadow: 0 10px 40px -10px rgba(6, 182, 212, 0.1);
+}
+
+/* Dark Theme (Team) */
+.navbar-hud.theme-dark {
+    border-bottom-color: rgba(255, 255, 255, 0.15);
+    background: rgba(2, 6, 23, 0.85);
+    /* Darker backdrop */
+}
+
+/* Transparent Theme (Hero) */
+.navbar-hud.theme-transparent {
+    border-bottom-color: transparent;
+    box-shadow: none;
+}
+
+/* --- PROTOCOL 2: SPOTLIGHT OVERLAY --- */
+.nav-spotlight {
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: 0.8;
+}
+
+.nav-wrapper {
+    position: relative;
+    z-index: 10;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+}
+
+/* --- BRANDING --- */
+.nav-brand {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: white;
+    letter-spacing: -0.02em;
+    user-select: none;
+}
+
+.brand-dot {
+    color: #84cc16;
+}
+
+/* --- NAVIGATION LINKS --- */
+.nav-links-desktop {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.nav-link {
+    position: relative;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 0;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: white;
+}
+
+.nav-link.active {
+    color: white;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+/* Laser Underline */
+.laser-underline {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #84cc16;
+    border-radius: 99px;
+    box-shadow: 0 0 10px #84cc16;
+}
+
+/* Theme-based Underline Colors */
+.theme-blue .laser-underline {
+    background: #06b6d4;
+    box-shadow: 0 0 10px #06b6d4;
+}
+
+.theme-dark .laser-underline {
+    background: white;
+    box-shadow: 0 0 10px white;
+}
+
+/* --- PROTOCOL 4: MORPHING CTA --- */
+.launch-cta {
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+    /* Default Border/Glow based on theme */
+    border: 1px solid rgba(132, 204, 22, 0.5);
+    padding: 10px 24px;
+    border-radius: 30px;
+    color: #84cc16;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Theme adaptations for CTA */
+.theme-blue .launch-cta {
+    border-color: rgba(6, 182, 212, 0.5);
+    color: #06b6d4;
+}
+
+.theme-dark .launch-cta {
+    border-color: rgba(255, 255, 255, 0.5);
+    color: white;
+}
+
+.launch-cta:hover {
+    background: rgba(132, 204, 22, 0.1);
+    box-shadow: 0 0 20px rgba(132, 204, 22, 0.3);
+    border-color: #84cc16;
+}
+
+.theme-blue .launch-cta:hover {
+    background: rgba(6, 182, 212, 0.1);
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+    border-color: #06b6d4;
+}
+
+.theme-dark .launch-cta:hover {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    border-color: white;
+}
+
+/* Liquid Fill Effect (Simplified for Magnetic Button) */
+.liquid-fill {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, rgba(132, 204, 22, 0.2), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.launch-cta:hover .liquid-fill {
+    opacity: 1;
+}
+
+/* --- PROTOCOL 3: SCROLL PROGRESS BAR --- */
+.scroll-progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background: #84cc16;
+    transform-origin: 0%;
+    z-index: 100;
+}
+
+.theme-blue .scroll-progress-bar {
+    background: #06b6d4;
+}
+
+.theme-dark .scroll-progress-bar {
+    background: white;
+}
+
+
+/* --- MOBILE MENU --- */
+.mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: rgba(2, 6, 23, 0.95);
+    backdrop-filter: blur(20px);
+    overflow: hidden;
+    transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    z-index: 900;
+}
+
+.mobile-menu.open {
+    height: calc(100vh - 70px);
+}
+
+.mobile-nav-link {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.mobile-launch-cta {
+    background: #84cc16;
+    color: black;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    padding: 16px 40px;
+    border-radius: 99px;
+    border: none;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .nav-links-desktop {
+        display: none;
+    }
+
+    .mobile-toggle {
+        display: block;
+    }
+}

@@ -1,0 +1,313 @@
+/* ===================================
+   AGRIVANI: HYPER-CONNECTED FUTURE HERO
+   =================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* --- PROTOCOL 1: MULTI-LAYERED ATMOSPHERE --- */
+.hero-beast {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background-color: #020617; /* Slate 950 */
+    color: white;
+    perspective: 1000px;
+}
+
+.atmosphere-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.base-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+}
+
+/* Layer 2: Digital Grid */
+.digital-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(132, 204, 22, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(132, 204, 22, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    mask-image: radial-gradient(circle at center, black 60%, transparent 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Layer 3: Particles */
+.particles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.data-spore {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #84cc16; /* Lime 500 */
+    border-radius: 50%;
+    box-shadow: 0 0 10px #84cc16;
+}
+
+/* Cinematic Gradient */
+.cinematic-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, transparent 0%, rgba(2, 44, 34, 0.6) 60%, #020617 100%);
+    z-index: 3;
+}
+
+/* Protocol 5: World-Class Polish */
+.noise-texture {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 4;
+}
+
+.chromatic-aberration {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    box-shadow: inset 0 0 100px rgba(0,0,0,0.5);
+    pointer-events: none;
+    z-index: 5;
+    mix-blend-mode: overlay;
+}
+
+/* --- PROTOCOL 2 & 3: CONTENT LAYER --- */
+.content-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Protocol 3: Orbital Clusters */
+.orbital-cluster {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-cluster { left: 10%; }
+.right-cluster { right: 10%; }
+
+.cluster-core {
+    position: relative;
+    z-index: 2;
+    color: #84cc16;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    border-radius: 50%;
+    border: 1px solid rgba(132, 204, 22, 0.3);
+    box-shadow: 0 0 20px rgba(132, 204, 22, 0.2);
+}
+
+.cluster-ripple {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    border: 1px solid rgba(132, 204, 22, 0.5);
+    animation: ripple 2s infinite;
+}
+
+.cluster-ripple.warning {
+    border-color: rgba(239, 68, 68, 0.5); /* Red for blocked threats */
+}
+
+.orbit-ring {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    animation: spin 30s linear infinite;
+}
+
+.satellite {
+    position: absolute;
+    top: 0; left: 50%;
+    transform-origin: 0 70px; /* Radius of orbit */
+}
+
+.sat-icon-wrapper {
+    background: #020617;
+    border: 1px solid #84cc16;
+    padding: 4px;
+    border-radius: 50%;
+    color: #84cc16;
+}
+
+.cluster-info {
+    position: absolute;
+    bottom: -60px;
+    width: 200px;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+}
+
+.text-right { text-align: right; right: 0; }
+
+.cluster-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #84cc16;
+    letter-spacing: 0.1em;
+    margin-bottom: 4px;
+}
+
+.cluster-sub {
+    display: block;
+    font-size: 0.65rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: monospace;
+}
+
+/* Protocol 2: Typography */
+.typography-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+}
+
+.holographic-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 9vw;
+    line-height: 0.9;
+    color: white;
+    margin: 0;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    display: flex;
+    gap: 0.2rem;
+}
+
+.glitch-char {
+    display: inline-block;
+}
+
+.data-stream-pill {
+    margin-top: 2rem;
+    position: relative;
+    padding: 12px 32px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border-radius: 99px;
+    overflow: hidden;
+    cursor: default;
+}
+
+.stream-border {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    border-radius: 99px;
+    border: 1px solid rgba(132, 204, 22, 0.3);
+    box-shadow: 0 0 15px rgba(132, 204, 22, 0.1);
+}
+
+.mic-icon {
+    color: #84cc16;
+}
+
+.pulsing {
+    animation: pulse 2s infinite;
+}
+
+.stream-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Protocol 4: Scroll Indicator */
+.scroll-indicator-complex {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.magnetic-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: #84cc16;
+}
+
+.scroll-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2rem;
+    margin-bottom: 5px;
+}
+
+/* Animations */
+@keyframes ripple {
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(2); opacity: 0; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.7; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .orbital-cluster {
+        display: none; /* Hide complex clusters on smaller screens */
+    }
+    .holographic-title {
+        font-size: 14vw;
+    }
+}

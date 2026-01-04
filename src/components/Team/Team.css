@@ -1,0 +1,301 @@
+/* ===================================
+   AGRIVANI: ELITE SQUAD INTERFACE
+   =================================== */
+
+.team-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #020617;
+    color: white;
+    padding: 100px 5%;
+    overflow: hidden;
+}
+
+/* --- PROTOCOL 5: COMMAND CENTER BACKGROUND --- */
+.command-center-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* World Map / Constellation Dots */
+    background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 30px 30px;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.green-spotlight {
+    position: absolute;
+    top: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 600px;
+    background: radial-gradient(circle, rgba(132, 204, 22, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.team-container {
+    position: relative;
+    z-index: 10;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.team-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.team-header h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    text-shadow: 0 0 30px rgba(132, 204, 22, 0.3);
+}
+
+.team-header p {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.3em;
+    color: #84cc16;
+    /* Neon Lime */
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+}
+
+/* --- PROTOCOL 1: GLASS IDENTITY MONOLITHS --- */
+.glass-monolith {
+    position: relative;
+    background: rgba(255, 255, 255, 0.03);
+    /* Ultra-thin glass */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 0;
+    /* Removing padding to let content flow */
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    height: 420px;
+    /* Tall vertical format */
+    display: flex;
+    flex-direction: column;
+}
+
+.glass-monolith:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: #84cc16;
+    /* Neon Lime Border */
+    box-shadow: 0 20px 40px -10px rgba(132, 204, 22, 0.15);
+    transform: translateY(-10px);
+}
+
+.monolith-content {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex-grow: 1;
+    z-index: 2;
+}
+
+/* --- PROTOCOL 2: HOLOGRAPHIC PORTRAIT --- */
+.holo-portrait-container {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    margin-bottom: 24px;
+}
+
+.data-ring-svg {
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 120%;
+    height: 120%;
+    pointer-events: none;
+}
+
+.spin-slow {
+    animation: spin-slow 20s linear infinite;
+}
+
+@keyframes spin-slow {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.portrait-mask {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+}
+
+.team-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) contrast(1.2);
+    transition: all 0.5s ease;
+}
+
+/* Hover Interaction: Restore Color & Scale */
+.glass-monolith:hover .team-img {
+    filter: grayscale(0%) contrast(1);
+    transform: scale(1.1);
+}
+
+/* Scanline Effect */
+.scanline-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 50%, rgba(132, 204, 22, 0.3) 50%, transparent 51%);
+    background-size: 100% 10px;
+    opacity: 0;
+    pointer-events: none;
+    animation: scanline 4s linear infinite;
+}
+
+.glass-monolith:hover .scanline-overlay {
+    opacity: 0.3;
+}
+
+@keyframes scanline {
+    0% {
+        background-position: 0 -100px;
+    }
+
+    100% {
+        background-position: 0 200px;
+    }
+}
+
+/* --- PROTOCOL 3: TECH SPEC TYPOGRAPHY --- */
+.member-info h3 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: white;
+    margin-bottom: 5px;
+    transition: color 0.3s;
+}
+
+.glass-monolith:hover .member-info h3 {
+    color: #84cc16;
+    /* Text Scramble Color Effect */
+}
+
+.member-role {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 15px;
+}
+
+/* Skill Pills */
+.skill-pills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.tech-pill {
+    background: #000;
+    border: 1px solid #84cc16;
+    color: #84cc16;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* --- PROTOCOL 4: SOCIAL DOCK --- */
+.social-dock {
+    width: 100%;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.4);
+    /* Darker footer area */
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    transform: translateY(100%);
+    /* Hidden by default */
+    transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.glass-monolith:hover .social-dock {
+    transform: translateY(0);
+    /* Slides up */
+}
+
+.magnetic-icon-wrapper {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-link {
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.3s;
+}
+
+.social-link:hover {
+    color: #84cc16;
+}
+
+/* BORDER GLOW CONTAINER (For advanced effect if needed) */
+.monolith-border-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    pointer-events: none;
+    box-shadow: inset 0 0 20px rgba(132, 204, 22, 0);
+    transition: box-shadow 0.4s ease;
+}
+
+.glass-monolith:hover .monolith-border-glow {
+    box-shadow: inset 0 0 20px rgba(132, 204, 22, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .glass-monolith {
+        height: auto;
+    }
+
+    .social-dock {
+        transform: translateY(0);
+        /* Always visible on mobile */
+        background: transparent;
+        padding-top: 0;
+    }
+}

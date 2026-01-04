@@ -1,0 +1,454 @@
+/* ===================================
+   AGRIVANI: NEURAL WORKFLOW (SYNAPTIC HIGHWAY)
+   =================================== */
+
+.neural-workflow-section {
+    position: relative;
+    width: 100%;
+    min-height: 1200px;
+    background-color: #020617;
+    color: white;
+    padding: 100px 5%;
+    overflow: hidden;
+}
+
+/* --- PROTOCOL 4: ATMOSPHERE --- */
+.void-texture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Subtle circuit pattern or noise */
+    background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.binary-rain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Simulating binary rain via repeating linear gradient */
+    background: repeating-linear-gradient(0deg,
+            transparent 0%,
+            rgba(34, 197, 94, 0.02) 50%,
+            transparent 100%);
+    background-size: 100% 200px;
+    animation: rain 20s linear infinite;
+    z-index: 1;
+}
+
+@keyframes rain {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 0 1000px;
+    }
+}
+
+.workflow-header {
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    margin-bottom: 2rem;
+}
+
+.workflow-header h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 10px;
+    text-shadow: 0 0 40px rgba(34, 197, 94, 0.3);
+}
+
+.workflow-header p {
+    font-family: 'Space Grotesk', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    color: #22c55e;
+}
+
+/* --- LAYOUT CONTAINER --- */
+.synaptic-highway-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+}
+
+/* --- PROTOCOL 1: SYNAPTIC LINE --- */
+.synaptic-line-wrapper {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 100%;
+    z-index: 5;
+    /* Ensure it acts as the spine */
+}
+
+.synaptic-svg {
+    width: 10px;
+    height: 100%;
+    overflow: visible;
+}
+
+/* Energy Pulse Bead */
+.energy-pulse-bead {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 6px;
+    height: 30px;
+    /* Elongated 'data packet' */
+    background: white;
+    border-radius: 99px;
+    transform: translateX(-50%);
+    box-shadow:
+        0 0 20px rgba(255, 255, 255, 0.8),
+        0 0 40px rgba(34, 197, 94, 0.6);
+    filter: blur(1px);
+
+    animation: synaptic-pulse 4s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+    z-index: 6;
+}
+
+@keyframes synaptic-pulse {
+    0% {
+        top: 0%;
+        opacity: 0;
+        scale: 0.5;
+    }
+
+    10% {
+        opacity: 1;
+        scale: 1;
+    }
+
+    90% {
+        opacity: 1;
+        scale: 1;
+    }
+
+    100% {
+        top: 100%;
+        opacity: 0;
+        scale: 0.5;
+    }
+}
+
+/* --- WORKFLOW STEPS GRID --- */
+.workflow-steps {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 150px;
+    /* Increased breathing room */
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.workflow-row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.row-spacer {
+    flex: 1;
+}
+
+.card-container {
+    flex: 1;
+    padding: 0 40px;
+}
+
+.node-container {
+    width: 60px;
+    /* Fixed width for center column */
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 20;
+}
+
+/* --- PROTOCOL 2: PROCESSING NODES --- */
+.processing-node {
+    width: 64px;
+    height: 64px;
+    background: #020617;
+    border: 2px solid #22c55e;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #22c55e;
+    position: relative;
+    box-shadow: 0 0 30px rgba(2, 6, 23, 0.8);
+    /* Shadow to hide line underneath */
+    z-index: 20;
+    transition: all 0.3s ease;
+}
+
+.node-core {
+    z-index: 2;
+}
+
+/* Specific Node Animations */
+
+/* Voice Ripple */
+.node-voice .node-ripple {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border: 2px solid #22c55e;
+    border-radius: 50%;
+    animation: ripple-out 2s infinite;
+}
+
+@keyframes ripple-out {
+    0% {
+        width: 100%;
+        height: 100%;
+        opacity: 1;
+        border-width: 2px;
+    }
+
+    100% {
+        width: 250%;
+        height: 250%;
+        opacity: 0;
+        border-width: 0px;
+    }
+}
+
+/* Llama Brain Glitch */
+.node-brain .node-core {
+    animation: glitch-skew 3s infinite;
+}
+
+@keyframes glitch-skew {
+
+    0%,
+    100% {
+        transform: skew(0deg);
+    }
+
+    20% {
+        transform: skew(-10deg);
+        filter: hue-rotate(90deg);
+    }
+
+    40% {
+        transform: skew(10deg);
+        filter: hue-rotate(-90deg);
+    }
+
+    60% {
+        transform: skew(0deg);
+    }
+}
+
+/* Database Stack Bounce */
+.node-database .node-core {
+    animation: stack-bounce 2s infinite;
+}
+
+@keyframes stack-bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+/* TTS Vibration */
+.node-tts .node-core {
+    animation: vibrate 0.5s infinite;
+}
+
+@keyframes vibrate {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    20% {
+        transform: translate(-2px, 2px);
+    }
+
+    40% {
+        transform: translate(2px, -2px);
+    }
+
+    60% {
+        transform: translate(-2px, -2px);
+    }
+
+    80% {
+        transform: translate(2px, 2px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+/* --- PROTOCOL 3: GLASS CARDS --- */
+.glass-card-wrapper {
+    width: 100%;
+    perspective: 1000px;
+    /* For 3D Tilt */
+}
+
+.glass-intelligence-card {
+    position: relative;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, transparent 100%);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+    border-right: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+
+    border-radius: 24px;
+    padding: 40px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 20px 50px -12px rgba(0, 0, 0, 0.8),
+        inset 0 0 30px rgba(0, 0, 0, 0.5);
+    /* Inner shadow depth */
+
+    transform-style: preserve-3d;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-intelligence-card:hover {
+    border-color: rgba(34, 197, 94, 0.5);
+    /* Neon Green Border */
+    box-shadow:
+        0 30px 60px -12px rgba(0, 0, 0, 0.9),
+        0 0 20px rgba(34, 197, 94, 0.1);
+}
+
+.card-number {
+    position: absolute;
+    top: -20px;
+    font-family: 'Syne', sans-serif;
+    font-size: 6rem;
+    font-weight: 800;
+    color: transparent;
+    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.1);
+    z-index: 0;
+    pointer-events: none;
+    line-height: 1;
+}
+
+.card-wrapper.right .card-number {
+    right: 20px;
+}
+
+.card-wrapper.left .card-number {
+    left: 20px;
+}
+
+.card-content {
+    position: relative;
+    z-index: 2;
+}
+
+.card-content h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 12px;
+}
+
+.card-content p {
+    font-family: 'Space Grotesk', sans-serif;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .synaptic-highway-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .synaptic-line-wrapper {
+        display: none;
+        /* Hide complex line on mobile for cleaner layout */
+    }
+
+    .workflow-steps {
+        gap: 60px;
+        position: relative;
+    }
+
+    .workflow-steps::before {
+        /* Simple line for mobile */
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 30px;
+        width: 2px;
+        height: 100%;
+        background: rgba(34, 197, 94, 0.3);
+        z-index: 0;
+    }
+
+    .workflow-row {
+        flex-direction: column;
+        /* Stack vertically, keeping node top-left */
+        align-items: flex-start;
+        padding-left: 60px;
+        /* Space for node */
+        position: relative;
+    }
+
+    .row-spacer {
+        display: none;
+    }
+
+    .node-container {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 60px;
+        justify-content: center;
+    }
+
+    .card-container {
+        padding: 0;
+        width: 100%;
+    }
+
+    .glass-intelligence-card {
+        padding: 24px;
+    }
+
+    .card-number {
+        font-size: 4rem;
+        top: -10px;
+    }
+}
