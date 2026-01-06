@@ -85,28 +85,28 @@ const teamMembers = [
         role: "TEAM LEAD",
         skills: ["REACT", "LEADERSHIP", "FRONTEND"],
         img: animesh_img,
-        socials: { linkedin: "#https://www.linkedin.com/in/animesh-adhikari-803755379/", github: "#https://github.com/animeshadk10-ops", Instagram: "#https://www.instagram.com/an1mationx/" }
+        socials: { linkedin: "https://www.linkedin.com/in/animesh-adhikari-803755379/", github: "https://github.com/animeshadk10-ops", instagram: "https://www.instagram.com/an1mationx/" }
     },
     {
         name: "SOHAM CHAKRABORTY",
         role: "LEAD ARCHITECT",
         skills: ["FULLSTACK", "SYSTEM DESIGN", "NODE.JS"],
         img: soham_img,
-        socials: { linkedin: "#https://www.linkedin.com/in/soham-chakraborty-b15837373/", github: "#https://github.com/soham-999", Instagram: "#https://www.instagram.com/soham99y/?utm_source=ig_web_button_share_sheet" }
+        socials: { linkedin: "https://www.linkedin.com/in/soham-chakraborty-b15837373/", github: "https://github.com/soham-999", instagram: "https://www.instagram.com/soham99y/?utm_source=ig_web_button_share_sheet" }
     },
     {
         name: "ARUNEEMA MUKHERJEE",
         role: "PITCH LEAD",
         skills: ["UI/UX", "FRONTEND", "STRATEGY"],
         img: aruneeema_img,
-        socials: { linkedin: "#https://www.linkedin.com/in/aruneema-mukherjee-3a48b2395/", github: "#https://github.com/AruNeema26", Instagram: "#https://www.instagram.com/aruneemaaaa____/" }
+        socials: { linkedin: "https://www.linkedin.com/in/aruneema-mukherjee-3a48b2395/", github: "https://github.com/AruNeema26", instagram: "https://www.instagram.com/aruneemaaaa____/" }
     },
     {
         name: "AVRAJYOTI KUNDU",
         role: "AI-ML ENGINEER",
         skills: ["PYTHON", "LLMs", "BACKEND"],
         img: avrojyoti_img,
-        socials: { linkedin: "#https://www.linkedin.com/in/avrajyoti-kundu-48387b399/", github: "#https://github.com/Avrajyoti-Kundu", Instagram: "#https://www.instagram.com/avra_jyoti/" }
+        socials: { linkedin: "https://www.linkedin.com/in/avrajyoti-kundu-48387b399/", github: "https://github.com/Avrajyoti-Kundu", instagram: "https://www.instagram.com/avra_jyoti/" }
     }
 ];
 
@@ -152,13 +152,37 @@ export default function Team() {
                             {/* Protocol 4: Social Dock (Slide Up on Hover via CSS/Framer) */}
                             <div className="social-dock">
                                 <MagneticIcon>
-                                    <a href={member.socials.linkedin} className="social-link"><Linkedin size={18} /></a>
+                                    <a
+                                        href={member.socials.linkedin}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="social-link"
+                                        style={{ display: "flex", width: "100%", height: "100%", alignItems: "center", justifyContent: "center" }}
+                                    >
+                                        <Linkedin size={18} />
+                                    </a>
                                 </MagneticIcon>
                                 <MagneticIcon>
-                                    <a href={member.socials.instagram} className="social-link"><Instagram size={18} /></a>
+                                    <a
+                                        href={member.socials.instagram}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="social-link"
+                                        style={{ display: "flex", width: "100%", height: "100%", alignItems: "center", justifyContent: "center" }}
+                                    >
+                                        <Instagram size={18} />
+                                    </a>
                                 </MagneticIcon>
                                 <MagneticIcon>
-                                    <a href={member.socials.github} className="social-link"><Github size={18} /></a>
+                                    <a
+                                        href={member.socials.github}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="social-link"
+                                        style={{ display: "flex", width: "100%", height: "100%", alignItems: "center", justifyContent: "center" }}
+                                    >
+                                        <Github size={18} />
+                                    </a>
                                 </MagneticIcon>
                             </div>
 
